@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Compare the size of two countries here:</h2>
+    <form id="comparison" action="" method="post">
+        {% csrf_token %}
+
+        {{ form }}
+
+        <input type="submit" name="compare" value="Go compare!">
+    </form>
+
+{% endblock %}

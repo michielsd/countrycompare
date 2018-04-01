@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    {% load leaflet_tags %}
+    {% load static %}
+    <head>
+        <title>Country Compare</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% leaflet_js %}
+        {% leaflet_css %}
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+        <script src="{% static 'leaflet-ajax/dist/leaflet.ajax.min.js' %}"></script>
+        <script src="{% static 'spin.js/spin.min.js' %}"></script>
+        <script src="{% static 'leaflet-spin/leaflet.spin.js' %}"></script>
+        <style>
+            .leaflet-container {  /* all maps */
+                width:  50%;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Country Compare</h1>
+        <div class="container">
+            <div class="row">
+                <p> <b><span style="color: green">{{ small_country }}</span></b> fits <b>{{ multiplier }} times</b> in <b><span style="color: red">{{ large_country }}</span></b></p>
+                <br>
+                <script type="text/javascript">
+                function map_init_basic(map, options){
+                    var LargeCountryStyle = {
+                        color: 'red',
+                        fillColor: '#f03',
+                        fillOpacity: 0.25
+                    };
+                    var SmallCountryStyle = {
+                        color: 'green',
+                        fillColor: '#7CFC00',
+                        fillOpacity: 0.25
+                    };
+                    var LargeCountryLayer = new L.GeoJSON(
+                        {% autoescape off %}
+                        {{ large_country_geojson }} 
+                        {% endautoescape %}, {
+                            style: LargeCountryStyle
+                        }
+                        );
+                    var SmallCountryLayer = new L.GeoJSON(
+                        {% autoescape off %}
+                        {{ small_country_geojson }} 
+                        {% endautoescape %}, {
+                            style: SmallCountryStyle
+                        }
+                        );
+                    LargeCountryLayer.addTo(map);
+                    SmallCountryLayer.addTo(map);
+                }
+                </script>
+                {% leaflet_map "comparison" callback="window.map_init_basic" %}
+                <br>
+                <p> <a href="/compare/">Click here</a> to compare two other countries</p>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+        <script language="javascript" type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </body>
+</html>
