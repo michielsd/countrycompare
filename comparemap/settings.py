@@ -25,7 +25,7 @@ SECRET_KEY = '*31t-efimik7_zwvz6l!y-xfs*dcfizo3qn0vzq%abb=!cb@nu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [‘0.0.0.0’, ‘localhost’]
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
 
     #addons
     'django.contrib.gis',
@@ -45,6 +47,8 @@ INSTALLED_APPS = [
     #native apps
     'compare',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

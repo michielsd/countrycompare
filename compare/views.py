@@ -36,8 +36,6 @@ def lookup(request):
                 large_country_geojson = serialize('geojson', country_2_db.all())
                 small_country_geojson = serialize('geojson', country_1_db.all())
             
-            # return relevant points
-            # ADD COUNTRY LABELS TO GEOJSON!!!!!
             return render(
                 request, 'results.html', {
                     'small_country': small_country,
