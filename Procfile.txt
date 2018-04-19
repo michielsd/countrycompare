@@ -1,1 +1,1 @@
-web: gunicorn comparemap.wsgi --log-file -
+web: gunicorn comparemap.wsgi
