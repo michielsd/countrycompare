@@ -24,7 +24,7 @@ psycopg2==2.7.3.2
 Pygments==2.2.0
 python-dateutil==2.6.1
 pytz==2017.3
-setuptools==36.5.0.post20170921
+setuptools==36.5.0
 simplegeneric==0.8.1
 six==1.11.0
 static3==0.7.0
