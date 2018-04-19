@@ -25,7 +25,7 @@ SECRET_KEY = '*31t-efimik7_zwvz6l!y-xfs*dcfizo3qn0vzq%abb=!cb@nu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost','https://countrycompare.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost','countrycompare.herokuapp.com']
 
 
 # Application definition
