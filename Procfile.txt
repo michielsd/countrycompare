@@ -1,1 +1,1 @@
-web: gunicorn comparemap.wsgi
+web: gunicorn comparemap:app
