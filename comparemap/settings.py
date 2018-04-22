@@ -89,6 +89,19 @@ DATABASES = { 'default': dj_database_url.config(
     default = 'postgis://wfmqwxgtkefsjo:24da873c153436bfbdfe594ce47e98e8328241aa3eafdf34a989295c207ffc0a@ec2-174-129-41-64.compute-1.amazonaws.com:5432/denspee4q3d4il') }
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'compare',
+        'USER': 'compareuser',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+"""
+
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
