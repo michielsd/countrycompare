@@ -88,12 +88,12 @@ import dj_database_url
 DATABASES = { 'default': dj_database_url.config(
     default = 'postgis://wfmqwxgtkefsjo:24da873c153436bfbdfe594ce47e98e8328241aa3eafdf34a989295c207ffc0a@ec2-174-129-41-64.compute-1.amazonaws.com:5432/denspee4q3d4il'
         )
+
     }
 
-"""
 DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
