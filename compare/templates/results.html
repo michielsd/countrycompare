@@ -4,7 +4,6 @@
 
 {% block content %}
                 <p> <b><span style="color: green">{{ small_country }}</span></b> fits <b>{{ multiplier }} times</b> in <b><span style="color: red">{{ large_country }}</span></b></p>
-                <br>
                 {% leaflet_map "comparison" callback="window.map_init_basic" %}
                 <script type="text/javascript">
                 function map_init_basic(map, options){
