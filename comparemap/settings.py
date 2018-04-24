@@ -147,6 +147,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 LEAFLET_CONFIG = {
   'DEFAULT_CENTER': (0.00,0.00),
   'DEFAULT_ZOOM': 1,
